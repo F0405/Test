@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bees-console
+  labels:
+    app: bees-console
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bees-console
+  template:
+    metadata:
+      labels:
+        app: bees-console
+    spec:
+      containers:
+        - name: bees-console
+          # image: "registry-vpc.cn-shanghai.aliyuncs.com/ab-inbev-apac/bees-console:1.0"
+          image: "registry-vpc.cn-shanghai.aliyuncs.com/ab-inbev-apac/bees-console:#version_num#"
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /etc/nginx/conf.d/default.conf
+              name: nginx-config
+              subPath: abi-default-web.conf
+
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: nginx-config
+
+      imagePullSecrets:
+        - name: acr-credential-27b7396c3bc51e6df6ffbf8189648a39
