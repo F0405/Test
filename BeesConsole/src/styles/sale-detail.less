@@ -1,0 +1,93 @@
+.basicInfo{
+  padding: 3px 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid rgba(230,230,230,1);
+  border-left: none;
+  p{
+    span{
+      font-weight: 800;
+      text-decoration: underline;
+      color: rgb(0, 215, 181);
+    }
+  }
+  .el-form-item{
+    margin-bottom: 0;
+  }
+}
+.under{
+  width:100%;
+  margin-top: 10px;
+  overflow: hidden;
+  .left{
+    width: 73%;
+    height: 100%;
+    border: 1px solid rgba(230,230,230,1);
+    margin-right: 2%;
+    float: left;
+    .btn{
+      height: 30px;
+      div{
+        float:left;
+        cursor: pointer;
+        height: 30px;
+        line-height: 25px;
+        font-size: 13px;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        margin-right: 10px;
+      }
+    }
+  }
+  .right{
+    width: 24%;
+    height: 100%;
+    padding:5px;
+    box-sizing: border-box;
+    border: 1px solid rgba(230,230,230,1);
+    float: left;
+  }
+}
+.btn div{
+  background-color: rgba(230,230,230,1);
+}
+.btn .selected{
+  background-color: khaki;
+}
+// 促销信息
+.classifyItems{
+  overflow: hidden;
+  div{
+    cursor: pointer;
+    color: #000;
+    padding: 2px;
+    box-sizing: border-box;
+    border: 1px solid yellowgreen;
+    background-color: #fff;
+    margin: 5px 0;
+  }
+  .selected{
+    background-color: #42b983;
+    color: #fff;
+  }
+}
+// 表单清除浮动
+.el-form{
+  position: relative;
+  overflow: hidden;
+  .status{
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    cursor: pointer;
+    height: 20px;
+    border-radius: 2px;
+    padding: 2px 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: rgba(255, 255, 128, 1);
+  }
+}
+.el-form-item--medium .el-form-item__label,.el-form-item--medium .el-form-item__content{
+  line-height: 26px;
+}
